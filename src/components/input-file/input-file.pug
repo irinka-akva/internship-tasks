@@ -1,0 +1,9 @@
+mixin input-file(props)
+	-const inputSvg = props.svg;
+
+	.input-file&attributes(attributes)
+		input.input-file__field&attributes(attributes)(data-component='input-file' id="input-file" type="file" name="files" multiple)
+		label.input-file__label(for="input-file") 
+			span.input-file__text!= props.text
+			+svg(inputSvg).input-file__svg
+		

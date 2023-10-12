@@ -1,0 +1,8 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		.form__wrapper
+			h1.form__title!=props.title 
+			form.form__inner
+				+input-file({text:"Прикрепить файл", svg: "load-files-button"})(class="form__button-add-files") 
+				+input-confirm({text1:"Вы подтверждаете, что ознакомились ", text2: "c политикой обработки персональных данных", svg: "tick"})(class="form__input-confirm") 
+				+button({text:"Отправить", svg: "button-arrow", type: "submit"})(class="form__button-submit") 

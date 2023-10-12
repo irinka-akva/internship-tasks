@@ -1,0 +1,27 @@
+.form {
+	$root: &;
+
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 26px 130px 60px 30px;
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 22% 65%;
+		gap: 13%;
+	}
+
+	&__title {
+		color: #002F6C;
+		font-family: Arial;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%;
+		letter-spacing: -0.6px;
+	}
+
+	&__inner {
+		padding-top: 24px;
+	}
+}

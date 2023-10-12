@@ -1,0 +1,70 @@
+.input-confirm {
+	$root: &;
+
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+
+&:not(:disabled):hover+.input-confirm__input-mark,
+&:not(:disabled):focus-visible+.input-confirm__input-mark {
+	outline: 2px solid #99B3D8;
+}
+
+&:checked +.input-confirm__input-mark .input-confirm__input-mark-svg {
+display: block;
+}
+
+&:checked +.input-confirm__input-mark {
+	background-color: #0041A0;
+	}
+
+&:disabled +.input-confirm__input-mark,
+&:disabled +.input-confirm__input-mark .input-confirm__input-mark-svg,
+&:disabled ~.input-confirm__input-text {
+	opacity: 0.3;
+}
+
+	&__input-text {
+		color: #909090;
+		font-size: 14px;
+		line-height: 150%;
+		padding-left: 34px;
+	
+		&--bold {
+			color: #002F6C;
+		}
+	}
+
+	&__input-mark {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		border: 1px solid #BCBCBC;
+		background-color: #fff;
+	}
+
+	&__input-mark-svg {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		top: 0;
+		width: 14px;
+		height: 14px;
+	}
+
+	&__label {
+		position: relative;	
+		display: flex;
+		align-items: center;
+	}
+}

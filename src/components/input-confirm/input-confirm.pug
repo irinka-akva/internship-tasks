@@ -1,0 +1,9 @@
+mixin input-confirm(props)
+	-const inputSvg = props.svg;
+
+	input.input-confirm(type="checkbox", name="confirm", id="confirm" value="true")&attributes(attributes)
+	label.input-confirm__label(for="confirm")
+		span.input-confirm__input-mark
+			+svg(inputSvg).input-confirm__input-mark-svg
+		span.input-confirm__input-text!=props.text1 
+		span.input-confirm__input-text.input-confirm__input-text--bold!=props.text2 

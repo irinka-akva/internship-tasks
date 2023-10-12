@@ -1,0 +1,8 @@
+mixin button(props)
+	-const buttonSvg = props.svg;
+	-const type = props.type;
+
+	button.button(type=type)&attributes(attributes)
+		.button__wrapper
+			span.button__text!= props.text
+			+svg(buttonSvg).button__svg
