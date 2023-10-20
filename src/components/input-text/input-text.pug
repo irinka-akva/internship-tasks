@@ -1,3 +1,6 @@
 mixin input-text(props)
-	.input-text&attributes(attributes)(data-component='input-text')
-		//Your code here
+	-const placeholderText = props.placeholderText;
+
+	.input-text&attributes(attributes)
+		textarea.input-text__input(name="message", id="message" placeholder=placeholderText)
+		label.input-text__label(for="message")!=props.text 

@@ -3,6 +3,15 @@ mixin form(props)
 		.form__wrapper
 			h1.form__title!=props.title 
 			form.form__inner
-				+input-file({text:"Прикрепить файл", svg: "load-files-button"})(class="form__button-add-files") 
-				+input-confirm({text1:"Вы подтверждаете, что ознакомились ", text2: "c политикой обработки персональных данных", svg: "tick"})(class="form__input-confirm") 
+				+input-text({text:"Ваше сообщение", placeholderText: "Ваше сообщение"})
+				.form__loaded-files-wrapper
+					.form__button-add-files-wrapper 
+						+input-file({text:"Прикрепить файл", svg: "load-files-button"})(class="form__button-add-files") 
+						.form__button-add-files-warning Максимальный размер файла 5 MB
+						.form__button-add-files-message 
+								p Вы можете загрузить только 2 документа
+					.form__loaded-file-wrapper
+						+loaded-file(class="form__loaded-file")
+				.form__input-confirm-wrapper 
+					+input-confirm({text1:"Вы подтверждаете, что ознакомились ", text2: "c политикой обработки персональных данных", svg: "tick"})(class="form__input-confirm") 
 				+button({text:"Отправить", svg: "button-arrow", type: "submit"})(class="form__button-submit") 

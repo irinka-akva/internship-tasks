@@ -3,7 +3,6 @@
 
 	width: 100%;
 	position: relative;
-	margin: 15px 0;
 	text-align: left;
 
 	&__field {
@@ -69,7 +68,6 @@
 	}
 
 	&__label {
-		width: 100%;
 		cursor: pointer;
 		padding: 14px 16px 16px 16px;
 		border-radius: 25px;
@@ -78,6 +76,7 @@
 			background-color 0.3s ease,
 			border 0.3s ease;
 		color: #021F45;
+		display: inline-block;
 	}
 
 	&__text {

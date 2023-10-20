@@ -10,33 +10,28 @@
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 
-&:not(:disabled):hover+.input-confirm__input-mark,
-&:not(:disabled):focus-visible+.input-confirm__input-mark {
-	outline: 2px solid #99B3D8;
-}
-
-&:checked +.input-confirm__input-mark .input-confirm__input-mark-svg {
-display: block;
-}
-
-&:checked +.input-confirm__input-mark {
-	background-color: #0041A0;
-	}
-
-&:disabled +.input-confirm__input-mark,
-&:disabled +.input-confirm__input-mark .input-confirm__input-mark-svg,
-&:disabled ~.input-confirm__input-text {
-	opacity: 0.3;
-}
-
 	&__input-text {
 		color: #909090;
 		font-size: 14px;
 		line-height: 150%;
-		padding-left: 34px;
-	
+		transition: opacity 0.3s ease;
+
+		&--normal {
+			padding-left: 34px;
+		}
+
 		&--bold {
 			color: #002F6C;
+			padding-left: 5px;
+
+			&:hover,
+			&:focus-visible {
+				opacity: 0.8;
+			}
+
+			&:active {
+				opacity: 0.6;
+			}
 		}
 	}
 
@@ -57,14 +52,52 @@ display: block;
 		position: absolute;
 		top: 0;
 		left: 0;
-		top: 0;
-		width: 14px;
-		height: 14px;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		width: 11px;
+		height: 11px;
 	}
 
 	&__label {
-		position: relative;	
+		position: relative;
 		display: flex;
 		align-items: center;
+		cursor: pointer;
+	}
+
+	&:not(:disabled):hover {
+		+#{$root}__label .input-confirm__input-mark {
+			border: 1px solid #0041A0;
+		}
+	}
+
+	&:not(:disabled):focus-visible {
+		+#{$root}__label .input-confirm__input-mark {
+			outline: 2px solid #99B3D8;
+		}
+	}
+
+	&:checked {
+		+#{$root}__label .input-confirm__input-mark .input-confirm__input-mark-svg {
+			display: block;
+		}
+
+		+#{$root}__label .input-confirm__input-mark {
+			background-color: #0041A0;
+		}
+	}
+
+	&:disabled {
+
+		+#{$root}__label .input-confirm__input-mark,
+		+#{$root}__label .input-confirm__input-text {
+			opacity: 0.3;
+		}
+
+		+#{$root}__label {
+			user-select: none;
+			cursor: auto;
+		}
 	}
 }

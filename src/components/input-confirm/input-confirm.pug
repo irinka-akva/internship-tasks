@@ -5,5 +5,5 @@ mixin input-confirm(props)
 	label.input-confirm__label(for="confirm")
 		span.input-confirm__input-mark
 			+svg(inputSvg).input-confirm__input-mark-svg
-		span.input-confirm__input-text!=props.text1 
-		span.input-confirm__input-text.input-confirm__input-text--bold!=props.text2 
+		span.input-confirm__input-text.input-confirm__input-text--normal!=props.text1 
+		a(href="#").input-confirm__input-text.input-confirm__input-text--bold!=props.text2 
