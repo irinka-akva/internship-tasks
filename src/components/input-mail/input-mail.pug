@@ -1,0 +1,9 @@
+mixin input-mail(props)
+	-const placeholderText = props.placeholderText;
+	-const inputSvg = props.inputSvg;
+
+	.input-mail&attributes(attributes)
+		input.input-mail__input&attributes(attributes)(type="email" name="email", id="email" placeholder=placeholderText)
+		label.input-mail__label(for="email")!=props.text 
+			+svg(inputSvg).input-mail__svg
+			.input-mail__warning Сообщение ошибки

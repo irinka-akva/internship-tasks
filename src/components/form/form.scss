@@ -36,7 +36,8 @@
 	}
 
 	&__button-add-files-warning {
-		display: inline-block;
+		display: none;
+		font-family: Arial, sans-serif;
 		color: #F00;
 		font-size: 12px;
 		font-weight: 400;
@@ -51,6 +52,7 @@
 	}
 
 	&__loaded-file-wrapper {
+		display: none;
 		margin-left: 19px;
 	}
 

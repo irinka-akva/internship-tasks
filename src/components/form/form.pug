@@ -2,14 +2,17 @@ mixin form(props)
 	.form&attributes(attributes)(data-component='form')
 		.form__wrapper
 			h1.form__title!=props.title 
-			form.form__inner
-				+input-text({text:"Ваше сообщение", placeholderText: "Ваше сообщение"})
+			form.form__inner(novalidate)
+				+input-mail({text:"E-mail", placeholderText: "E-mail", inputSvg:"text-field-tick"})(class="form__mail-field") 
+				+input-text({text:"Ваше сообщение", placeholderText: "Ваше сообщение", inputSvg:"text-field-tick"})(class="form__text-field") 
 				.form__loaded-files-wrapper
 					.form__button-add-files-wrapper 
 						+input-file({text:"Прикрепить файл", svg: "load-files-button"})(class="form__button-add-files") 
 						.form__button-add-files-warning Максимальный размер файла 5 MB
 						.form__button-add-files-message 
 								p Вы можете загрузить только 2 документа
+					.form__loaded-file-wrapper
+						+loaded-file(class="form__loaded-file")
 					.form__loaded-file-wrapper
 						+loaded-file(class="form__loaded-file")
 				.form__input-confirm-wrapper 

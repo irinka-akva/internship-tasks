@@ -1,6 +1,9 @@
 mixin input-text(props)
 	-const placeholderText = props.placeholderText;
+	-const inputSvg = props.inputSvg;
 
 	.input-text&attributes(attributes)
-		textarea.input-text__input(name="message", id="message" placeholder=placeholderText)
+		textarea.input-text__input&attributes(attributes)(name="message", id="message" placeholder=placeholderText)
 		label.input-text__label(for="message")!=props.text 
+		+svg(inputSvg).input-text__svg
+		.input-text__warning Сообщение ошибки
